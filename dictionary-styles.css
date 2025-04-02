@@ -1,0 +1,355 @@
+/* dictionary-styles.css - بزوايا أكثر استدارة */
+:root {
+    --white: #ffffff;
+    --light-blue: #5d9cec;
+    --blue: #4a89dc;
+    --dark-blue: #3b7dd8;
+    --red: #e74c3c;
+    --light-red: #ff6b6b;
+    --black: #2c3e50;
+    --light-gray: #f5f7fa;
+    --gray: #e0e6ed;
+    --dark-gray: #6c757d;
+    --border-radius: 12px; /* زوايا أكثر استدارة */
+    --border-radius-small: 8px;
+    --border-radius-pill: 20px;
+}
+
+/* أنماط عامة للصفحة */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* أنماط الهيدر */
+.header {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 25px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* أنماط مربع البحث */
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#searchInput {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid var(--gray);
+    border-radius: var(--border-radius-small);
+    font-size: 1rem;
+}
+
+#searchButton {
+    padding: 12px 25px;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius-small);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#searchButton:hover {
+    background-color: var(--dark-blue);
+}
+
+/* أنماط نتائج البحث */
+.results {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    min-height: 300px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--red);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.word-entry {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray);
+}
+
+/* شريط نوع الكلمة */
+.word-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.word-header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--red);
+    border-radius: var(--border-radius-small);
+}
+
+.word-title {
+    font-size: 1.8rem;
+    color: var(--dark-blue);
+    margin: 0;
+}
+
+.word-types {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.word-type {
+    background-color: var(--red);
+    color: white;
+    padding: 5px 15px;
+    border-radius: var(--border-radius-pill);
+    font-size: 0.9rem;
+}
+
+/* شريط أشكال الكلمة */
+.word-forms {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: var(--border-radius-small);
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.word-forms::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--blue);
+    border-radius: var(--border-radius-small);
+}
+
+.word-forms h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--dark-blue);
+}
+
+.word-forms ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.word-forms li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.word-forms li::before {
+    content: "•";
+    color: var(--blue);
+    position: absolute;
+    left: 5px;
+    font-size: 1.4rem;
+}
+
+/* شريط القواعد النحوية */
+.grammar-section {
+    background-color: var(--light-gray);
+    padding: 20px;
+    border-radius: var(--border-radius-small);
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.grammar-section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--dark-blue);
+    border-radius: var(--border-radius-small);
+}
+
+.grammar-section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--dark-blue);
+}
+
+.grammar-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.grammar-section li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.grammar-section li::before {
+    content: "•";
+    color: var(--dark-blue);
+    position: absolute;
+    left: 5px;
+    font-size: 1.4rem;
+}
+
+/* شريط التعريفات */
+.definitions {
+    margin-top: 20px;
+}
+
+.definition {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: var(--border-radius-small);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: relative;
+    padding-left: 25px;
+}
+
+.definition::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--light-blue);
+    border-radius: var(--border-radius-small);
+}
+
+.definition-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--dark-blue);
+}
+
+.definition p {
+    margin: 0;
+}
+
+/* أنماط الفوتر وزر العودة */
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    border-top: 1px solid var(--gray);
+    color: var(--dark-gray);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--red);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius-small);
+    margin-top: 15px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: var(--light-red);
+}
+
+/* أنماط الرسائل */
+.error, .placeholder {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1rem;
+    border-radius: var(--border-radius-small);
+}
+
+.error {
+    color: var(--red);
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+.placeholder {
+    color: var(--dark-gray);
+}
+
+/* التجاوب مع الأجهزة المحمولة */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .header {
+        padding: 20px;
+        border-radius: var(--border-radius-small);
+    }
+    
+    .word-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .word-title {
+        font-size: 1.5rem;
+    }
+    
+    .search-container {
+        flex-direction: column;
+    }
+    
+    #searchButton {
+        width: 100%;
+    }
+    
+    .word-forms li::before, 
+    .grammar-section li::before {
+        left: 0;
+    }
+    
+    .results {
+        border-radius: var(--border-radius-small);
+    }
+}
